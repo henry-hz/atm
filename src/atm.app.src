@@ -1,0 +1,13 @@
+{application, atm,
+ [
+  {description, ""},
+  {modules, "eb_server"},
+  {vsn, "1"},
+  {registered, []},
+  {applications, [
+                  kernel,
+                  stdlib
+                 ]},
+  {mod, { atm_app, []}},
+  {env, []}
+ ]}.
