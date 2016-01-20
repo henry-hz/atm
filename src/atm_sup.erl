@@ -59,8 +59,10 @@ Children = [Proc, Proc2],
 %% one_for_all           : if one child process terminates and should be restarted, all 
 %%                         other child processes are terminated and then all child 
 %%                         processes are restarted.
-%% rest_for_one          : if one child process terminates and should be restarted, 
-%%                         the 'rest' of the child processes.
+%% rest_for_one          : when you have similar dependencies (X works alone, but Y depends on X and Z depends 
+%%                         on both). What a rest_for_one restarting strategy does, basically, is make it so 
+%%                         if a process dies, all the ones that were started after it (depend on it) 
+%%                         get restarted.
 %% simple_one_for_one    : a simplified one_for_one supervisor, where all child processes are 
 %%                         dynamically added instances of the same process type, i.e. running the same code
 %% Maximum               : maximum number of restarts.
